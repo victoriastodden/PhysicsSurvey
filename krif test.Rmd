@@ -29,12 +29,12 @@ kripp.alpha(data.matrix(t(krip_alpha))[1:2,],"nominal")
 
 # MK&DW
 kripp.alpha(data.matrix(t(krip_alpha))[-2,],"ordinal")
-kripp.alpha(data.matrix(t(krip_alpha))[1:2,],"nominal")
+kripp.alpha(data.matrix(t(krip_alpha))[-2,],"nominal")
 
 
 # YZ&DW
 kripp.alpha(data.matrix(t(krip_alpha))[-1,],"ordinal")
-kripp.alpha(data.matrix(t(krip_alpha))[1:2,],"nominal")
+kripp.alpha(data.matrix(t(krip_alpha))[-1,],"nominal")
 
 # Overall, "ordinal" performs better than "nominal", DW and YZ have a higher alpha.
 
