@@ -1,0 +1,41 @@
+---
+title: "Krif test"
+author: "YZ"
+date: "April 4, 2017"
+output: html_document
+---
+
+```{r}
+
+# encoding: 0 for none, 1 for some tools described, 2 for available upon request
+# only 3 levels of encoding for testing (that we actually used)
+
+require(readr, quietly = TRUE)
+krip_alpha <- read_csv("C:/Users/yantongz/Desktop/research/krip alpha.csv",col_names = FALSE)
+
+head(krip_alpha, 10)
+
+library(irr, quietly = TRUE)
+
+# 3 coders tests:
+kripp.alpha(data.matrix(t(krip_alpha)),"ordinal")
+
+kripp.alpha(data.matrix(t(krip_alpha)),"nominal")
+
+# MK&YZ
+kripp.alpha(data.matrix(t(krip_alpha))[1:2,],"ordinal")
+kripp.alpha(data.matrix(t(krip_alpha))[1:2,],"nominal")
+
+
+# MK&DW
+kripp.alpha(data.matrix(t(krip_alpha))[-2,],"ordinal")
+kripp.alpha(data.matrix(t(krip_alpha))[1:2,],"nominal")
+
+
+# YZ&DW
+kripp.alpha(data.matrix(t(krip_alpha))[-1,],"ordinal")
+kripp.alpha(data.matrix(t(krip_alpha))[1:2,],"nominal")
+
+# Overall, "ordinal" performs better than "nominal", DW and YZ have a higher alpha.
+
+```
